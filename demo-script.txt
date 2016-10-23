@@ -1,0 +1,13 @@
+show all ng1
+add bootstrap
+show with bootstrap but no ng1 content
+ - show bootstrap code, root component
+switch team detail to ng2
+ - show service upgrade code
+ - talk about route forwarding
+talk about routing organization
+show ng2 route code
+switch team detail to lazy-load
+ - maybe show w/ error for league service, then move to root module?
+ - talk about needing to split up dependencies into small modules
+
