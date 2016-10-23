@@ -9,7 +9,13 @@ let delay = 0;
 
 export class LeagueService {
     leagues: League[] = [
-        new League('premier', 'Premier'),
+        new League('bundesliga', 'Bundesliga', 'Germany'),
+        new League('laliga', 'La Liga', 'Spain'),
+        new League('eredivisie', 'Eredivisie', 'Netherlands'),
+        new League('ligue1', 'Ligue 1', 'France'),
+        new League('premier', 'Premier League', 'England'),
+        new League('seriea', 'Italian Serie A', 'Italy'),
+        new League('portugeseliga', 'Liga Sagres', 'Portugal'),
     ];
 
     constructor(private $timeout: ng.ITimeoutService) { }

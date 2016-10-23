@@ -1,9 +1,9 @@
 import { AppModule} from './app2.module';
 import { createAngular1RootModule } from './upgrade_utils';
 import { footballApp } from './app.module';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import {PlatformRef, Type} from '@angular/core';
-import {UpgradeModule} from '@angular/upgrade';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { PlatformRef, Type } from '@angular/core';
+import { UpgradeModule } from '@angular/upgrade';
 import { Router } from '@angular/router';
 import { TeamService } from './common/team/team.service';
 
