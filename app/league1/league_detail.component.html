@@ -1,7 +1,8 @@
 <h1>{{ctrl.league.name}} (ng1)</h1>
 
+<p>{{ctrl.league.name}} is based in {{ctrl.league.country}}.  Its teams include:</p>
 <ul>
     <li ng-repeat="team in ctrl.teams">
-        <a href="#/team/{{team.id}}">{{team.name}}</a>
+        <a href="#/teams/{{team.id}}">{{team.name}}</a>
     </li>
 </ul>
