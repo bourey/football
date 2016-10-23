@@ -8,7 +8,7 @@ import { TeamDetailCmp } from './team_detail.component';
 
 @Injectable()
 class TeamResolver implements Resolve<Team> {
-  constructor(@Inject('teamService') private teamService: TeamService) {}
+  constructor(private teamService: TeamService) {}
 
   resolve(route: ActivatedRouteSnapshot): Promise<Team> {
     return this.teamService.getTeam(route.params['teamId']);

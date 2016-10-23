@@ -9,7 +9,7 @@ import { TeamListCmp } from './team_list.component';
 
 @Injectable()
 class TeamsResolver implements Resolve<Team[]> {
-  constructor(@Inject('teamService') private teamService: TeamService) {}
+  constructor(private teamService: TeamService) {}
 
   resolve(): Promise<Team[]> {
     return this.teamService.getTeams();
