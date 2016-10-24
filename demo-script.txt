@@ -1,7 +1,9 @@
-show with bootstrap but no ng1 content
- - normal app1
- - app2
- - show bootstrap code, root component
+demo app
+
+switch to ng2 bootstrap
+ - show app2
+ - bootstrap
+ - rootcmp in index
 
 switch team detail to ng2
  - show team service
