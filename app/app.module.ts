@@ -14,7 +14,7 @@ export const footballApp = angular.module('footballApp', [
     'ngMaterial',
     'ngMdIcons',
     leagueModule.name,
-//    teamModule.name,
+    teamModule.name,
     teamServiceModule.name,
     LeagueServiceModule.name,
 ]);

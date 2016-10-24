@@ -27,4 +27,4 @@ let ROUTES = [{
   imports: [CommonModule, RouterModule.forChild(ROUTES)],
   providers: [TeamResolver],
 })
-export default class TeamsComponentModule { }
+export class TeamComponentModule { }

@@ -3,7 +3,6 @@ import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, UrlHandlingStrategy } from '@angular/router';
 import { MdCoreModule } from '@angular2-material/core';
-import { TeamsModule } from './team2/team.module';
 import { UpgradeModule, downgradeComponent} from '@angular/upgrade';
 
 import { footballApp } from './app.module';
@@ -12,7 +11,7 @@ import { footballApp } from './app.module';
 // Using it we can tell the Angular 2 router to handle only specific URLs.
 class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
 //  shouldProcessUrl(url: any) { return false; }
-  shouldProcessUrl(url: any) { return url.toString().startsWith('/teams'); }
+  shouldProcessUrl(url: any) { return false; }
   extract(url: any) { return url; }
   merge(url: any, whole: any) { return url; }
 }
@@ -33,7 +32,6 @@ export class Ng2RouterRoot {}
     BrowserModule,
     MdCoreModule,
     RouterModule.forRoot([], {useHash: true}),
-    TeamsModule,
     UpgradeModule,
   ],
   declarations: [Ng2RouterRoot],
