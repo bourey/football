@@ -18,7 +18,7 @@ talk about routing organization
 show ng2 route code
 
 switch team detail to lazy-load
- - switch loadChildren to static string
+ - switch loadChildren to static string: 'app/team2/team_list.module'
  - remove component imports
  - change component class to default
 
