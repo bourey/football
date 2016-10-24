@@ -3,7 +3,7 @@ demo app
 switch to ng2 bootstrap
  - show app2
  - bootstrap
- - rootcmp in index
+ - turn on css styles
 
 switch team detail to ng2
  - show team service

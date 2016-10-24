@@ -9,15 +9,13 @@ import { footballApp } from './app.module';
 // a placeholder component that acts as a root component for angular 2 modules
 @Component({
   selector : 'ng2-router-root',
-  template: `<div class="ng2-indicator">ng2!</div><router-outlet></router-outlet>`
+  template: `<router-outlet></router-outlet>`
 })
 export class Ng2RouterRoot {}
 
 
 /** Wrapper root module for angular 1 */
 export const RootModule = angular.module('rootModule', ['ngRoute', footballApp.name]);
-
-RootModule.component('rootCmp', {template : '<div class="ng-view"></div>'});
 
 RootModule.directive('ng2RouterRoot', downgradeComponent({
   component: Ng2RouterRoot,
