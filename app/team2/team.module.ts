@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+import { TeamServiceModule } from '../common/team/team.service';
+
 let ROUTES = [
   { path: 'teams', children: [
     { path: '', loadChildren: 'app/team2/team_list.module' },
@@ -10,6 +12,6 @@ let ROUTES = [
 
 
 @NgModule({
-  imports: [RouterModule.forChild(ROUTES)],
+  imports: [TeamServiceModule, RouterModule.forChild(ROUTES)],
 })
 export class TeamsModule {}

@@ -7,7 +7,6 @@ import { TeamsModule } from './team2/team.module';
 import { UpgradeModule, downgradeComponent} from '@angular/upgrade';
 
 import { footballApp } from './app.module';
-import { TeamServiceModule } from './common/team/team.service';
 
 // This URL handling strategy is custom and application-specific.
 // Using it we can tell the Angular 2 router to handle only specific URLs.
@@ -35,7 +34,6 @@ export class Ng2RouterRoot {}
     MdCoreModule,
     RouterModule.forRoot([], {useHash: true}),
     TeamsModule,
-    TeamServiceModule,
     UpgradeModule,
   ],
   declarations: [Ng2RouterRoot],
