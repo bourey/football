@@ -1,6 +1,11 @@
 show with bootstrap but no ng1 content
+ - normal app1
+ - app2
  - show bootstrap code, root component
+
 switch team detail to ng2
+ - show team service
+ - show team2 code
  - app1
    remove team module import
  - app2
