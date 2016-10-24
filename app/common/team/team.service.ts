@@ -1,3 +1,6 @@
+import { NgModule } from '@angular/core';
+import { UpgradeModule } from '@angular/upgrade';
+
 import { Team } from './team';
 
 let delay = 0;
@@ -93,3 +96,15 @@ export class TeamService {
 
 export const teamServiceModule = angular.module('teamServiceModule', []);
 teamServiceModule.service('teamService', TeamService);
+
+@NgModule({
+  imports: [UpgradeModule],
+  providers: [
+    {
+      provide: TeamService,
+      useFactory: (i: ng.auto.IInjectorService) => i.get('teamService'),
+      deps: ['$injector']
+    }
+  ]
+})
+export class TeamServiceModule { }

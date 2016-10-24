@@ -5,8 +5,9 @@ import { RouterModule, UrlHandlingStrategy } from '@angular/router';
 import { MdCoreModule } from '@angular2-material/core';
 import { TeamsModule } from './team2/team.module';
 import { UpgradeModule, downgradeComponent} from '@angular/upgrade';
-import { TeamService} from './common/team/team.service';
+
 import { footballApp } from './app.module';
+import { TeamServiceModule } from './common/team/team.service';
 
 // This URL handling strategy is custom and application-specific.
 // Using it we can tell the Angular 2 router to handle only specific URLs.
@@ -29,17 +30,18 @@ export class Ng2RouterRoot {}
  * Root module for angular 2 for the app. 
  */
 @NgModule({
-  imports: [BrowserModule, MdCoreModule,
-    RouterModule.forRoot([], {useHash: true}), TeamsModule, UpgradeModule],
+  imports: [
+    BrowserModule,
+    MdCoreModule,
+    RouterModule.forRoot([], {useHash: true}),
+    TeamsModule,
+    TeamServiceModule,
+    UpgradeModule,
+  ],
   declarations: [Ng2RouterRoot],
   entryComponents: [Ng2RouterRoot],
   providers: [
     { provide: UrlHandlingStrategy, useClass: Ng1Ng2UrlHandlingStrategy },
-    {
-      provide: TeamService,
-      useFactory: (i: ng.auto.IInjectorService) => i.get('teamService'),
-      deps: ['$injector']
-    }
   ]
 })
 export class AppModule {
@@ -60,5 +62,6 @@ RootModule.directive('ng2RouterRoot', downgradeComponent({
 // Tell the angular 1 router to render the placeholder
 RootModule.config(($routeProvider: angular.route.IRouteProvider) => {
   $routeProvider
-    .otherwise({template : '<ng2-router-root></ng2-router-root>', reloadOnSearch: false});
+    .otherwise({template : '<ng2-router-root></ng2-router-root>',
+        reloadOnSearch: false});
 });
