@@ -2,7 +2,6 @@
 import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, UrlHandlingStrategy } from '@angular/router';
-import { MdCoreModule } from '@angular2-material/core';
 import { UpgradeModule, downgradeComponent} from '@angular/upgrade';
 
 import { footballApp } from './app.module';
@@ -30,7 +29,6 @@ export class Ng2RouterRoot {}
 @NgModule({
   imports: [
     BrowserModule,
-    MdCoreModule,
     RouterModule.forRoot([], {useHash: true}),
     UpgradeModule,
   ],
