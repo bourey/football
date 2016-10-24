@@ -1,3 +1,13 @@
 md-toolbar ng-md-icon {
     fill: white;
 }
+
+.ng2-indicator {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: green;
+    font-weight: bold;
+    background-color: green;
+    color: white;
+}

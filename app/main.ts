@@ -1,9 +1,10 @@
-import { AppModule, RootModule } from './app2.module';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { PlatformRef, Type } from '@angular/core';
-import { UpgradeModule } from '@angular/upgrade';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Router } from '@angular/router';
-import { TeamService } from './common/team/team.service';
+import { UpgradeModule } from '@angular/upgrade';
+
+import { AppModule, RootModule } from './app2.module';
+
 
 export function bootstrap(
     platform: PlatformRef, Ng2Module: Type<{}>, element: Element, ng1Module: angular.IModule) {
@@ -20,6 +21,5 @@ bootstrap(platformBrowserDynamic(), AppModule, document.body, RootModule).then((
   // this is required because of a bug in NgUpgrade
   setTimeout(() => {
     ref.injector.get(Router).initialNavigation();
-    console.log(ref.injector.get(TeamService));
   }, 0);
 });

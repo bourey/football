@@ -4,21 +4,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, UrlHandlingStrategy } from '@angular/router';
 import { MdCoreModule } from '@angular2-material/core';
 import { TeamsModule } from './team2/team.module';
-import { LeagueService2Module } from './common/league/league.service';
 import { UpgradeModule, downgradeComponent} from '@angular/upgrade';
-import { TeamService } from './common/team/team.service';
+import { TeamService} from './common/team/team.service';
 import { footballApp } from './app.module';
 
 // This URL handling strategy is custom and application-specific.
 // Using it we can tell the Angular 2 router to handle only specific URLs.
 class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
+//  shouldProcessUrl(url: any) { return false; }
   shouldProcessUrl(url: any) { return url.toString().startsWith('/teams'); }
   extract(url: any) { return url; }
   merge(url: any, whole: any) { return url; }
 }
 
 // a placeholder component that acts as a root component for angular 2 modules
-@Component({selector : 'ng2-router-root', template: `<router-outlet></router-outlet>`})
+@Component({
+  selector : 'ng2-router-root', 
+  template: `<div class="ng2-indicator">ng2!</div><router-outlet></router-outlet>`
+})
 export class Ng2RouterRoot {}
 
 
@@ -26,8 +29,8 @@ export class Ng2RouterRoot {}
  * Root module for angular 2 for the app. 
  */
 @NgModule({
-  imports: [TeamsModule, LeagueService2Module, BrowserModule, MdCoreModule,
-    RouterModule.forRoot([], {useHash: true}), UpgradeModule],
+  imports: [BrowserModule, MdCoreModule,
+    RouterModule.forRoot([], {useHash: true}), TeamsModule, UpgradeModule],
   declarations: [Ng2RouterRoot],
   entryComponents: [Ng2RouterRoot],
   providers: [

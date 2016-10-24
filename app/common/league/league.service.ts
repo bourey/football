@@ -1,6 +1,3 @@
-import { NgModule } from '@angular/core';
-import { UpgradeAdapter } from '@angular/upgrade';
-
 import { League } from './league';
 
 let delay = 0;
@@ -37,10 +34,3 @@ export class LeagueService {
 
 export const LeagueServiceModule = angular.module('LeagueServiceModule', []);
 LeagueServiceModule.service('leagueService', LeagueService);
-
-@NgModule()
-export class LeagueService2Module {
-  static setAdapter(adapter: UpgradeAdapter) {
-    adapter.upgradeNg1Provider('leagueService');
-  }
-}

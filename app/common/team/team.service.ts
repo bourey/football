@@ -1,6 +1,3 @@
-import { NgModule } from '@angular/core';
-import { UpgradeAdapter } from '@angular/upgrade';
-
 import { Team } from './team';
 
 let delay = 0;
@@ -96,10 +93,3 @@ export class TeamService {
 
 export const teamServiceModule = angular.module('teamServiceModule', []);
 teamServiceModule.service('teamService', TeamService);
-
-@NgModule()
-export class TeamService2Module {
-  static setAdapter(adapter: UpgradeAdapter) {
-    adapter.upgradeNg1Provider('teamService');
-  }
-}
