@@ -68,6 +68,8 @@ export class TeamService {
     new Team('53', 'Fiorentina', 'seriea'),
     new Team('54', 'Cagliari', 'seriea'),
     new Team('55', 'Sampdoria', 'seriea'),
+    new Team('56', 'MKS Lędziny', '4ligapolska'),
+    new Team('57', 'Warta Działoszyn', '4ligapolska'),
   ];
 
   constructor(private $timeout: ng.ITimeoutService) { }
